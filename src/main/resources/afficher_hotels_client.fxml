@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.afficher_hotels_clientController"
+            style="-fx-background-color: #f7f7f7;">
+
+    <children>
+        <!-- Conteneur principal -->
+        <VBox spacing="15" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+
+            <!-- En-tête avec titre -->
+            <HBox alignment="CENTER" style="-fx-background-color: #3498db; -fx-padding: 15;">
+                <Label text="Découvrez nos hôtels"
+                       style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            </HBox>
+
+            <!-- Barre de recherche -->
+            <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10 20;">
+                <TextField fx:id="txtSearchHotel" promptText="Rechercher un hôtel..."
+                           HBox.hgrow="ALWAYS"
+                           style="-fx-font-size: 14px; -fx-padding: 8; -fx-background-radius: 5;"/>
+                <Button text="Rechercher" onAction="#searchHotel"
+                        style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15; -fx-background-radius: 5;"/>
+            </HBox>
+
+            <!-- Liste des hôtels dans un panneau stylisé -->
+            <VBox style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 1); -fx-background-radius: 5;" VBox.vgrow="ALWAYS">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+
+                <Label text="Liste des Hôtels Disponibles"
+                       style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-padding: 0 0 10 5;"/>
+
+                <ListView fx:id="lv_hotels_client" VBox.vgrow="ALWAYS"
+                          style="-fx-background-radius: 5; -fx-border-color: transparent;"/>
+            </VBox>
+
+            <!-- Conteneur des détails d'un hôtel (masqué par défaut) -->
+            <VBox fx:id="detailsContainer" spacing="15"
+                  style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 1); -fx-background-radius: 5; -fx-padding: 20;"
+                  visible="false" VBox.vgrow="NEVER">
+
+                <HBox spacing="20">
+                    <!-- Image de l'hôtel -->
+                    <ImageView fx:id="imgHotel" fitWidth="300" fitHeight="200" preserveRatio="true"
+                               style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);"/>
+
+                    <!-- Informations principales -->
+                    <VBox spacing="10" HBox.hgrow="ALWAYS">
+                        <Label fx:id="lblNom" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label fx:id="lblPrix" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #27ae60;"/>
+                        <Label fx:id="lblAdresse" style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+
+                        <Separator style="-fx-padding: 5 0;"/>
+                        <Label text="Description" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label fx:id="lblDescription" wrapText="true" style="-fx-font-size: 14px; -fx-text-fill: #34495e;"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Informations de contact -->
+                <VBox spacing="5">
+                    <Label text="Contact" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                    <HBox spacing="20">
+                        <HBox spacing="5" alignment="CENTER_LEFT">
+                            <Label text="Téléphone:" style="-fx-font-weight: bold; -fx-text-fill: #7f8c8d;"/>
+                            <Label fx:id="lblTel" style="-fx-text-fill: #34495e;"/>
+                        </HBox>
+                        <HBox spacing="5" alignment="CENTER_LEFT">
+                            <Label text="Email:" style="-fx-font-weight: bold; -fx-text-fill: #7f8c8d;"/>
+                            <Label fx:id="lblEmail" style="-fx-text-fill: #34495e;"/>
+                        </HBox>
+                    </HBox>
+                </VBox>
+
+                <!-- Informations sur le pays -->
+                <VBox spacing="5">
+                    <Label text="Informations sur le Pays" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                    <HBox spacing="20">
+                        <HBox spacing="5" alignment="CENTER_LEFT">
+                            <Label text="Capitale:" style="-fx-font-weight: bold; -fx-text-fill: #7f8c8d;"/>
+                            <Label fx:id="lblCapitale" style="-fx-text-fill: #34495e;"/>
+                        </HBox>
+                        <HBox spacing="5" alignment="CENTER_LEFT">
+                            <Label text="Population:" style="-fx-font-weight: bold; -fx-text-fill: #7f8c8d;"/>
+                            <Label fx:id="lblPopulation" style="-fx-text-fill: #34495e;"/>
+                        </HBox>
+                        <HBox spacing="5" alignment="CENTER_LEFT">
+                            <Label text="Langues:" style="-fx-font-weight: bold; -fx-text-fill: #7f8c8d;"/>
+                            <Label fx:id="lblLanguages" style="-fx-text-fill: #34495e;"/>
+                        </HBox>
+                        <HBox spacing="5" alignment="CENTER_LEFT">
+                            <Label text="Monnaies:" style="-fx-font-weight: bold; -fx-text-fill: #7f8c8d;"/>
+                            <Label fx:id="lblCurrencies" style="-fx-text-fill: #34495e;"/>
+                        </HBox>
+                    </HBox>
+                </VBox>
+
+                <!-- Boutons d'action -->
+                <HBox spacing="15" alignment="CENTER_RIGHT">
+                    <Button fx:id="btnRetour" text="Retour" onAction="#retourMenu"
+                            style="-fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50; -fx-padding: 8 15; -fx-background-radius: 5;"/>
+                    <Button fx:id="btnMesReservations" text="Mes Réservations" onAction="#allerMesReservations"
+                            style="-fx-background-color: #ecf0f1; -fx-text-fill: #2c3e50; -fx-padding: 8 15; -fx-background-radius: 5;"/>
+                    <Button fx:id="btnReserver" text="Réserver" onAction="#allerReservation"
+                            style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 20; -fx-background-radius: 5;"/>
+                </HBox>
+            </VBox>
+
+            <!-- Pied de page -->
+            <HBox alignment="CENTER_RIGHT" style="-fx-padding: 10; -fx-background-color: #f0f0f0;">
+                <Label text="© 2025 Système de Réservation d'Hôtels" style="-fx-text-fill: #95a5a6; -fx-font-size: 12px;"/>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

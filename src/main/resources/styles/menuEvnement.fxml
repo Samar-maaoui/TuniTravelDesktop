@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox styleClass="border-bottom" stylesheets="@../style.css" BorderPane.alignment="CENTER">
+         <children>
+            <VBox onMouseClicked="#gotoAfficherEvenement">
+               <children>
+                  <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets left="60.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../images/liste-a-puces.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="17.0" prefWidth="77.0" text="Evenements">
+                     <VBox.margin>
+                        <Insets left="45.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="10.0" onMouseClicked="#goToAjouter">
+               <children>
+                  <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets left="60.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../images/plus.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="17.0" prefWidth="119.0" text="Ajouter evenement">
+                     <VBox.margin>
+                        <Insets left="15.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="127.0" layoutY="10.0" onMouseClicked="#goToDisplayReservations">
+               <children>
+                  <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets left="55.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../images/reserve.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="17.0" text="Reservations">
+                     <VBox.margin>
+                        <Insets left="30.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="317.0" prefWidth="601.0" />
+        </content>
+      </ScrollPane>
+   </center>
+</BorderPane>

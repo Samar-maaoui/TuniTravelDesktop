@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AfficherExcursionsController">
+   <content>
+      <AnchorPane prefHeight="850.0" prefWidth="1574.0" style="-fx-background-color: rgba(10, 26, 47, 0.05);">
+         <stylesheets>
+            <URL value="@Excursions.css" />
+         </stylesheets>
+         <children>
+            <!-- ScrollPane to contain the excursions list -->
+            <ScrollPane hbarPolicy="NEVER" layoutX="15.2" layoutY="65.0" prefHeight="701.0" prefWidth="895.0" style="-fx-background: transparent; -fx-background-color: transparent;" vbarPolicy="ALWAYS" AnchorPane.leftAnchor="15.0">
+               <content>
+                  <!-- VBox to hold excursion items -->
+                  <VBox fx:id="excursionVBox" prefHeight="350.0" prefWidth="853.0" spacing="20.0">
+                     <!-- Example static excursion -->
+                     <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: rgba(212, 175, 55, 0.2); -fx-effect: dropshadow(gaussian, rgba(10, 26, 47, 0.1), 8, 0, 2, 4);">
+                        <ImageView fitHeight="167.0" fitWidth="197.0" preserveRatio="true" style="-fx-border-radius: 5; -fx-border-color: rgba(184, 134, 11, 0.3);" />
+                        <VBox prefHeight="327.0" prefWidth="566.0" spacing="5">
+                           <Text style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-fill: rgba(30, 58, 138, 0.9);" text="Nom Excursion" />
+                           <Text style="-fx-font-size: 14px; -fx-fill: rgba(10, 26, 47, 0.8);" text="Lieu: Lieu de l'Excursion" />
+                           <Text style="-fx-font-size: 14px; -fx-fill: rgba(10, 26, 47, 0.8);" text="Prix: " />
+                           <Text style="-fx-font-size: 14px; -fx-fill: rgba(184, 134, 11, 0.9); -fx-font-weight: bold;" text="50€" />
+                           <Text style="-fx-font-size: 14px; -fx-fill: rgba(10, 26, 47, 0.8);" text="Date Aller: 2025-02-20" />
+                           <Text style="-fx-font-size: 14px; -fx-fill: rgba(10, 26, 47, 0.8);" text="Date Retour: 2025-02-22" />
+                           <Text style="-fx-font-size: 14px; -fx-fill: rgba(10, 26, 47, 0.8); -fx-wrapping-width: 300;" text="Description: Excursion de découverte..." />
+                           <Text style="-fx-font-size: 14px; -fx-fill: rgba(10, 26, 47, 0.8);" text="Places Disponibles: 10" />
+                           <Text style="-fx-font-size: 14px; -fx-fill: rgba(10, 26, 47, 0.8);" text="Guide: Nom Prénom du Guide" />
+                        </VBox>
+                     </HBox>
+                  </VBox>
+               </content>
+            </ScrollPane>
+
+            <!-- Add Button -->
+            <Button fx:id="Ajouter" layoutX="742.0" layoutY="779.0" style="-fx-background-color: rgba(212, 175, 55, 0.8); -fx-text-fill: rgba(10, 26, 47, 0.9); -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 5;" text="➕ Ajouter Excursion" />
+
+            <Text layoutX="33.0" layoutY="40.0" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-fill: rgba(30, 58, 138, 0.9);" text="Liste des excursions">
+               <effect>
+                  <DropShadow color="rgba(212, 175, 55, 0.3)" radius="3" />
+               </effect>
+            </Text>
+
+            <TitledPane animated="false" layoutX="928.0" layoutY="120.0" prefHeight="330.0" prefWidth="353.0" style="-fx-base: rgba(212, 175, 55, 0.1);" text="Affiner">
+               <content>
+                  <AnchorPane fx:id="affiner" minHeight="0.0" minWidth="0.0" prefHeight="302.0" prefWidth="357.0" style="-fx-background-color: white; -fx-border-color: rgba(184, 134, 11, 0.2); -fx-border-radius: 5; -fx-background-radius: 5;">
+                     <children>
+                        <Slider fx:id="filtrage" blockIncrement="50" layoutX="14.0" layoutY="36.0" majorTickUnit="100" max="300" min="0" minorTickCount="30" prefHeight="42.0" prefWidth="248.0" showTickLabels="true" showTickMarks="true" style="-fx-control-inner-background: rgba(30, 58, 138, 0.1);" value="300" />
+                        <Text layoutX="14.0" layoutY="20.0" style="-fx-font-size: 15; -fx-fill: rgba(10, 26, 47, 0.8);" text="Budget:" />
+                        <ChoiceBox fx:id="Villedepart" layoutX="14.0" layoutY="126.0" prefHeight="28.0" prefWidth="306.0" style="-fx-background-color: white; -fx-border-color: rgba(184, 134, 11, 0.3); -fx-border-radius: 3;" />
+                        <ChoiceBox fx:id="villearrive" layoutX="14.0" layoutY="229.0" prefHeight="28.0" prefWidth="304.0" style="-fx-background-color: white; -fx-border-color: rgba(184, 134, 11, 0.3); -fx-border-radius: 3;" />
+                        <Text layoutX="14.0" layoutY="110.0" style="-fx-font-size: 15; -fx-fill: rgba(10, 26, 47, 0.8);" text="Ville départ:" />
+                        <Text layoutX="14.0" layoutY="213.0" style="-fx-font-size: 15; -fx-fill: rgba(10, 26, 47, 0.8);" text="Ville arrivée:" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+
+            <Pane layoutX="924.8" layoutY="507.2" prefHeight="333.0" prefWidth="569.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="925.0" AnchorPane.topAnchor="507.0">
+               <children>
+                  <BarChart fx:id="satexcursion" layoutX="40.0" prefHeight="316.0" prefWidth="548.0" style="-fx-background-color: white; -fx-border-color: rgba(184, 134, 11, 0.2); -fx-border-radius: 5;">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" style="-fx-tick-label-fill: rgba(10, 26, 47, 0.8);" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis prefHeight="280.0" prefWidth="31.0" side="LEFT" style="-fx-tick-label-fill: rgba(10, 26, 47, 0.8);" />
+                     </yAxis>
+                  </BarChart>
+               </children>
+            </Pane>
+
+            <Button fx:id="afficherDansLeMap" layoutX="441.0" layoutY="778.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="286.0" style="-fx-background-color: rgba(30, 58, 138, 0.9); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;" text="🗺 Afficher sur carte" />
+
+            <Text layoutX="969.0" layoutY="486.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-fill: rgba(30, 58, 138, 0.9);" text="Tendance des Réservations d'Excursions" wrappingWidth="378.903076171875">
+
+            </Text>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

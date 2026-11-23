@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.weatherController">
+    <children>
+        <VBox alignment="CENTER" spacing="15" prefWidth="500" prefHeight="700" style="-fx-background-color: linear-gradient(to bottom, #3498db, #2c3e50); -fx-padding: 20;">
+
+            <!-- Champ de recherche -->
+            <TextField fx:id="cityField" promptText="Entrez une ville..." style="-fx-font-size: 16px; -fx-pref-width: 300px; -fx-padding: 10;"/>
+            <Button text="Obtenir la météo" onAction="#fetchWeather" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px;"/>
+
+            <!-- Info météo actuelle -->
+            <Label fx:id="cityLabel" text="Ville : ?" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <ImageView fx:id="weatherIcon" fitWidth="80" fitHeight="80"/>
+            <Label fx:id="tempLabel" text="Température : ?" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <Label fx:id="conditionLabel" text="Condition : ?" style="-fx-text-fill: white; -fx-font-size: 16px;"/>
+
+            <!-- Prévisions météo sur 7 jours -->
+            <FlowPane fx:id="forecastPane" hgap="10" vgap="10" alignment="CENTER" style="-fx-padding: 10;"/>
+        </VBox>
+    </children>
+</AnchorPane>

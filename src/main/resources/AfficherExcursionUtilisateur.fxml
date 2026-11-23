@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.effect.DropShadow?>
+
+<?import java.net.URL?>
+<ScrollPane prefHeight="773.0" prefWidth="1471.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AfficherExcursionUtilisateurController">
+    <content>
+        <AnchorPane prefHeight="771.0" prefWidth="766.0" style="-fx-background-color: rgba(10, 26, 47, 0.05);">
+            <stylesheets>
+                <URL value="@Excursions.css" />
+            </stylesheets>
+            <children>
+                <!-- ScrollPane centré au milieu -->
+                <ScrollPane hbarPolicy="NEVER" layoutX="26.0" layoutY="102.0" prefHeight="702.0" prefWidth="706.0" vbarPolicy="ALWAYS" style="-fx-background: transparent; -fx-background-color: transparent;">
+                    <content>
+                        <!-- VBox pour afficher toutes les excursions -->
+                        <VBox fx:id="excursionVBox" prefWidth="560.0" spacing="20.0" style="-fx-background-color: transparent;">
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+
+                <Label layoutX="33.0" layoutY="31.0" prefHeight="46.0" prefWidth="397.0" style="-fx-font-size: 28; -fx-font-weight: bold;" text="Liste des excursions">
+
+
+                    <effect>
+                        <DropShadow color="rgba(184, 134, 11, 0.3)" radius="3" />
+                    </effect>
+                </Label>
+
+                <TitledPane animated="false" layoutX="786.0" layoutY="107.0" prefHeight="374.0" prefWidth="377.0" text="Affiner" style="-fx-base: rgba(212, 175, 55, 0.1);">
+                    <content>
+                        <AnchorPane fx:id="filtrerrechreche" minHeight="0.0" minWidth="0.0" prefHeight="347.0" prefWidth="348.0" style="-fx-background-color: white; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-color: rgba(184, 134, 11, 0.3);">
+                            <children>
+                                <Slider fx:id="filtragerecherche" blockIncrement="50" layoutX="14.0" layoutY="36.0" majorTickUnit="100" max="300" min="0" minorTickCount="30" prefHeight="38.0" prefWidth="242.0" showTickLabels="true" showTickMarks="true" value="300" style="-fx-control-inner-background: rgba(30, 58, 138, 0.1);">
+                                    <effect>
+                                        <DropShadow color="rgba(184, 134, 11, 0.2)" radius="2" />
+                                    </effect>
+                                </Slider>
+                                <Label fx:id="prixLabel1" layoutX="271.0" layoutY="36.0" style="-fx-font-weight: bold; -fx-text-fill: rgba(184, 134, 11, 0.9);" text="300DT" />
+                                <Label layoutX="14.0" layoutY="6.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: rgba(10, 26, 47, 0.8);" text="Budget:" />
+                                <ChoiceBox fx:id="villedepartrecherche" layoutX="14.0" layoutY="115.0" prefHeight="26.0" prefWidth="292.0" style="-fx-background-color: white; -fx-border-color: rgba(184, 134, 11, 0.3); -fx-border-radius: 3;" />
+                                <ChoiceBox fx:id="destinationrecherche" layoutX="14.0" layoutY="208.0" prefHeight="26.0" prefWidth="292.0" style="-fx-background-color: white; -fx-border-color: rgba(184, 134, 11, 0.3); -fx-border-radius: 3;" />
+                                <Label layoutX="20.0" layoutY="91.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: rgba(10, 26, 47, 0.8);" text="Ville départ:" />
+                                <Label layoutX="20.0" layoutY="184.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: rgba(10, 26, 47, 0.8);" text="Destination:" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+
+                <BarChart fx:id="satexcursion" layoutX="748.0" layoutY="585.0" prefHeight="341.0" prefWidth="588.0" style="-fx-background-color: white; -fx-border-radius: 5; -fx-border-color: rgba(184, 134, 11, 0.3);">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM" style="-fx-tick-label-fill: rgba(10, 26, 47, 0.8);" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT" style="-fx-tick-label-fill: rgba(10, 26, 47, 0.8);" />
+                    </yAxis>
+                </BarChart>
+
+                <Label layoutX="776.0" layoutY="531.0" prefHeight="18.0" prefWidth="517.0" style="-fx-font-size: 22; -fx-font-weight: bold;" text="Tendance des Réservations d'Excursions">
+
+                </Label>
+
+                <Button fx:id="idliste" layoutX="440.0" layoutY="815.0" mnemonicParsing="false" onAction="#gotoListeReservation" prefHeight="38.0" prefWidth="292.0" style="-fx-background-color: rgba(212, 175, 55, 0.8); -fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: rgba(10, 26, 47, 0.9); -fx-background-radius: 5;">
+                    <effect>
+                        <DropShadow color="rgba(184, 134, 11, 0.3)" radius="3" />
+                    </effect>
+                    Consulter la liste des réservations
+                </Button>
+
+                <Button fx:id="afficherDansLeMap" layoutX="441.0" layoutY="872.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="292.0" style="-fx-background-color: rgba(30, 58, 138, 0.9); -fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: white; -fx-background-radius: 5;">
+                    <effect>
+                        <DropShadow color="rgba(10, 26, 47, 0.2)" radius="3" />
+                    </effect>
+                    🗺 Afficher sur carte
+                </Button>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </AnchorPane>
+    </content>
+</ScrollPane>

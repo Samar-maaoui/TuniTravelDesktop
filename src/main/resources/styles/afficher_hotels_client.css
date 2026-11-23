@@ -1,0 +1,79 @@
+/* 📌 Conteneur principal qui remplit l’espace */
+.root {
+    -fx-background-color: #f4f4f4;
+    -fx-padding: 20px;
+}
+
+/* 🔎 Style de la barre de recherche */
+.search-field {
+    -fx-pref-width: 300px;
+    -fx-padding: 10px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-color: #ddd;
+    -fx-font-size: 14px;
+}
+
+.search-button {
+    -fx-background-color: #ff5722;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-radius: 8px;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+}
+
+.search-button:hover {
+    -fx-background-color: #e64a19;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* 🏨 Liste des hôtels occupe tout l’espace disponible */
+.hotel-list {
+    -fx-background-color: transparent;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 10px;
+}
+
+/* 📌 Ajustement des cartes d’hôtels */
+.list-cell {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 10px;
+    -fx-padding: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
+}
+
+.list-cell:hover {
+    -fx-background-color: #ffebcd;
+    -fx-border-color: #ff5722;
+    -fx-border-width: 2px;
+}
+
+/* 📌 Conteneur des détails */
+.hotel-details {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-border-radius: 12px;
+    -fx-padding: 20px;
+    -fx-border-color: #ddd;
+}
+
+/* 📏 Espacement et alignement des boutons */
+.button-container {
+    -fx-spacing: 10px;
+    -fx-alignment: center-right;
+}
+
+.action-button {
+    -fx-background-color: #28a745; /* Couleur vert classique */
+    -fx-text-fill: white;
+    -fx-padding: 10px 15px;
+    -fx-border-radius: 8px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.action-button:hover {
+    -fx-background-color: #218838; /* Couleur vert plus foncé au survol */
+}

@@ -1,0 +1,180 @@
+/* Police et base de l'application */
+{
+
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-base: #f8f9fa;
+}
+
+/* Style global de l'AnchorPane */
+.AnchorPane {
+    -fx-background-color: linear-gradient(to bottom right, #f8f9fa, rgba(10, 26, 47, 0.05));
+    -fx-padding: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(10, 26, 47, 0.1), 10, 0, 0, 5);
+}
+
+/* Style du ListView */
+#listView {
+    -fx-background-color: white;
+    -fx-border-color: rgba(10, 26, 47, 0.2);
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(10, 26, 47, 0.05), 5, 0, 0, 3);
+    -fx-font-size: 14px;
+}
+
+/* Style des cellules de la liste */
+.list-cell {
+    -fx-padding: 10px 15px;
+    -fx-border-color: transparent transparent rgba(10, 26, 47, 0.1) transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: rgba(30, 58, 138, 0.8); /* Bleu marine */
+    -fx-text-fill: white;
+    -fx-background-radius: 4px;
+}
+
+.list-cell:even {
+    -fx-background-color: white;
+}
+
+.list-cell:odd {
+    -fx-background-color: rgba(10, 26, 47, 0.03);
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: rgba(212, 175, 55, 0.1); /* Jaune doré très léger */
+    -fx-text-fill: #212529;
+    -fx-cursor: hand;
+}
+
+/* Style de l'ImageView */
+#guideImageView {
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(10, 26, 47, 0.15), 8, 0, 2, 4);
+    -fx-border-color: rgba(184, 134, 11, 0.3); /* Brun doré */
+    -fx-border-width: 1px;
+}
+
+/* Style des conteneurs */
+#guideNameHBox {
+    -fx-spacing: 15px;
+    -fx-alignment: center-left;
+    -fx-border-color: rgba(212, 175, 55, 0.3); /* Jaune doré */
+    -fx-border-width: 0 0 1px 0;
+    -fx-padding: 0 0 10px 0;
+}
+
+#detailsVBox {
+    -fx-background-color: white;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 20px;
+    -fx-spacing: 12px;
+    -fx-effect: dropshadow(three-pass-box, rgba(10, 26, 47, 0.05), 5, 0, 0, 3);
+    -fx-border-color: rgba(10, 26, 47, 0.1); /* Bleu foncé */
+    -fx-border-width: 1px;
+}
+
+/* Style des Labels */
+#nameLabel {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgba(10, 26, 47, 0.9); /* Bleu foncé */
+}
+
+#langueLabel, #email, #Telephone {
+    -fx-font-size: 14px;
+    -fx-text-fill: rgba(10, 26, 47, 0.8); /* Bleu foncé */
+}
+
+#langueLabel {
+    -fx-font-weight: bold;
+    -fx-text-fill: rgba(184, 134, 11, 0.8); /* Brun doré */
+}
+
+/* Style global des boutons */
+.button {
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-padding: 10px 20px;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(10, 26, 47, 0.1), 3, 0, 1, 1);
+}
+
+.button:hover {
+    -fx-effect: dropshadow(gaussian, rgba(10, 26, 47, 0.2), 5, 0, 2, 2);
+}
+
+/* Bouton principal */
+#ajouter {
+    -fx-background-color: rgba(212, 175, 55, 0.8); /* Jaune doré */
+    -fx-text-fill: rgba(10, 26, 47, 0.9); /* Bleu foncé */
+}
+
+#ajouter:hover {
+    -fx-background-color: rgba(212, 175, 55, 1); /* Jaune doré plus saturé */
+    -fx-text-fill: white;
+}
+
+/* Bouton secondaire */
+Button {
+    -fx-background-color: rgba(30, 58, 138, 0.8); /* Bleu marine */
+    -fx-text-fill: white;
+}
+
+Button:hover {
+    -fx-background-color: rgba(30, 58, 138, 1); /* Bleu marine plus saturé */
+}
+
+/* Bouton danger */
+#btnSupprimer {
+    -fx-background-color: rgba(184, 134, 11, 0.8); /* Brun doré */
+    -fx-text-fill: white;
+}
+
+#btnSupprimer:hover {
+    -fx-background-color: rgba(184, 134, 11, 1); /* Brun doré plus saturé */
+}
+
+/* Style du ScrollPane */
+ScrollPane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+ScrollPane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Barre de défilement */
+.scroll-bar:horizontal, .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal .track, .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .thumb, .scroll-bar:vertical .thumb {
+    -fx-background-color: rgba(10, 26, 47, 0.2); /* Bleu foncé léger */
+    -fx-background-radius: 4px;
+}
+
+.scroll-bar:horizontal .thumb:hover, .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: rgba(10, 26, 47, 0.4); /* Bleu foncé plus prononcé */
+}
+
+/* Effets de focus */
+.text-field:focused, .text-area:focused {
+    -fx-border-color: rgba(212, 175, 55, 0.6); /* Jaune doré */
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 4px;
+}

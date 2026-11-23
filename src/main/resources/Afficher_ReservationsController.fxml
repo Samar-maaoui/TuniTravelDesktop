@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="768.0" prefWidth="1366.0"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.Afficher_ReservationsController"
+            stylesheets="@/styles/designe.css"
+            style="-fx-background-color: #f8f9fa;">
+
+    <!-- En-tête -->
+    <top>
+        <VBox>
+            <HBox alignment="CENTER" style="-fx-background-color: #2E8B57; -fx-padding: 20px;">
+                <Label text="Mes Réservations" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            </HBox>
+
+            <!-- Barre de navigation avec bouton Retour -->
+            <HBox spacing="10" style="-fx-padding: 15px; -fx-background-color: #f0f0f0;">
+                <Button text="⬅ Retour" fx:id="btnRetour" onAction="#retour"
+                        style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 8 15; -fx-background-radius: 5;" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label text="Liste de vos réservations actuelles"
+                       style="-fx-font-size: 16px; -fx-text-fill: #495057;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Contenu principal -->
+    <center>
+        <VBox spacing="20" style="-fx-padding: 30px;">
+            <!-- Liste des réservations avec ScrollPane pour gérer de nombreuses réservations -->
+            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                <VBox>
+                    <Label text="Réservations en cours"
+                           style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2E8B57; -fx-padding: 0 0 10 0;"/>
+                    <ListView fx:id="listViewReservations" VBox.vgrow="ALWAYS"
+                              style="-fx-background-color: #ffffff; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 10; -fx-min-height: 450;"/>
+                </VBox>
+            </ScrollPane>
+
+            <!-- Informations sur les réservations sélectionnées (facultatif) -->
+            <HBox style="-fx-padding: 10px; -fx-background-color: #e9f5f2; -fx-background-radius: 5; -fx-border-radius: 5;">
+                <Label text="Sélectionnez une réservation pour voir les détails ou effectuer une action"
+                       style="-fx-font-size: 14px; -fx-text-fill: #2E8B57;"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <!-- Barre d'actions en bas -->
+    <bottom>
+        <VBox>
+            <!-- Section des actions -->
+            <HBox spacing="15" alignment="CENTER" style="-fx-padding: 20px; -fx-background-color: #f0f0f0;">
+                <Button text="🗑 Supprimer Réservation" fx:id="btnSupprimer" onAction="#handleSupprimerReservation"
+                        style="-fx-background-color: #d9534f; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 10 20; -fx-background-radius: 5;"/>
+                <Button text="➕ Nouvelle Réservation" fx:id="btnAjouterReservation" onAction="#ajouterReservation"
+                        style="-fx-background-color: #2E8B57; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 10 20; -fx-background-radius: 5;"/>
+            </HBox>
+
+            <!-- Pied de page -->
+            <HBox alignment="CENTER" style="-fx-background-color: #2E8B57; -fx-padding: 10px;">
+                <Label text="Système de Gestion Hôtelière" style="-fx-text-fill: white;"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.AjouterPostController"   style="-fx-background-color: white;"
+>
+
+    <children>
+        <!-- Label Titre -->
+        <Label layoutX="250.0" layoutY="30.0" text="Ajouter un Post"
+               style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #1565c0;" />
+
+        <!-- Champs de saisie -->
+        <Label layoutX="50.0" layoutY="80.0" text="Titre :" />
+        <TextField fx:id="titreField" layoutX="200.0" layoutY="75.0" prefWidth="400.0" promptText="Entrez le titre du post" />
+
+        <Label layoutX="50.0" layoutY="130.0" text="Description :" />
+        <TextField fx:id="descriptionField" layoutX="200.0" layoutY="125.0" prefWidth="400.0" promptText="Ajoutez une description" />
+
+        <Label layoutX="50.0" layoutY="180.0" text="Date Expiration :" />
+        <DatePicker fx:id="dateExpirationPicker" layoutX="200.0" layoutY="175.0" prefWidth="400.0" promptText="Sélectionnez une date" />
+
+        <Label layoutX="50.0" layoutY="230.0" text="PackVoyage associé :" />
+        <ComboBox fx:id="comboPackVoyage" layoutX="200.0" layoutY="225.0" prefWidth="400.0" />
+
+        <!-- Boutons -->
+        <Button fx:id="btnRetour" layoutX="200.0" layoutY="280.0" prefWidth="120.0" onAction="#handleRetour"
+                style="-fx-background-color: #C62828; -fx-text-fill: white; -fx-font-weight: bold;" text="Retour" />
+
+        <Button fx:id="btnAjouter" layoutX="480.0" layoutY="280.0" prefWidth="120.0" onAction="#handleAjouter"
+                style="-fx-background-color: #2E7D32; -fx-text-fill: white; -fx-font-weight: bold;" text="Ajouter" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PaiementPackVoyageController" style="-fx-background-color: white;">
+    <StackPane alignment="CENTER">
+        <VBox spacing="20" alignment="CENTER" prefWidth="1360" prefHeight="800">
+            <padding>
+                <Insets top="40" right="60" bottom="40" left="60"/>
+            </padding>
+
+            <!-- Titre de la section -->
+            <Label text="📑📝 Paiement de la Réservation" style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #1E3A8A; -fx-alignment: CENTER; -fx-background-color: #E5E7EB; -fx-padding: 15px; -fx-border-radius: 10px; -fx-background-radius: 10px;"/>
+
+            <!-- ListView pour afficher les réservations -->
+            <ListView fx:id="listViewReservations" prefHeight="200" prefWidth="1123" style="-fx-font-size: 14px; -fx-background-color: #ffffff; -fx-border-color: #ddd;" />
+
+            <!-- Bouton "Payer la réservation" -->
+            <Button fx:id="btnPayer" text="Payer la réservation" layoutX="20" layoutY="240" prefWidth="250" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 15px; -fx-background-radius: 5px;" onAction="#payerReservation"/>
+
+        </VBox>
+    </StackPane>
+</AnchorPane>

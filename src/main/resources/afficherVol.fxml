@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane fx:id="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.afficherVolController">    <children>
+        <VBox alignment="CENTER" spacing="20" AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+            <!-- Titre -->
+            <Label text="Liste des Vols" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #343a40;" />
+
+            <!-- Barre de recherche -->
+            <HBox alignment="CENTER" spacing="10">
+                <TextField fx:id="searchField" promptText="Rechercher un vol..." style="-fx-pref-width: 300px; -fx-background-radius: 20; -fx-padding: 8px;" />
+                <Button text="Chercher" onAction="#chercherVol" style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 10px 20px;" />
+                <Button text="Trier" onAction="#trierVols" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 10px 20px;" />
+            </HBox>
+
+            <!-- Liste des vols -->
+            <VBox style="-fx-background-color: transparent;">
+                <ListView fx:id="listViewVols" style="-fx-background-color: transparent;"/>
+            </VBox>
+
+            <!-- Boutons -->
+            <HBox alignment="CENTER" spacing="15">
+                <Button text="Recharger" onAction="#afficherVols" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 10px 20px;" />
+                <Button fx:id="btnAjouterVol" text="Ajouter Vol" onAction="#goToAjouterVols" style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 10px 20px;" />
+                <Button fx:id="btnsupprimerVol" text="Supprimer Vol" onAction="#supprimerVol" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 10px 20px;" />
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane prefHeight="800" prefWidth="1300"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.FeedbackAdminController">
+
+    <HBox prefHeight="800" prefWidth="1300" spacing="20" stylesheets="@feedback-admin.css">
+
+        <!-- Menu latéral avec ScrollPane -->
+        <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="sidebar-scroll"/>
+
+        <!-- Conteneur principal avec ScrollPane -->
+        <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="main-scroll" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS">
+            <VBox spacing="20">
+
+                <!-- Titre -->
+                <HBox alignment="CENTER_LEFT" spacing="20">
+                    <Label styleClass="welcome-title" text="Gestion des Feedbacks"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                </HBox>
+
+                <!-- Conteneur principal -->
+                <VBox styleClass="main-container" spacing="20">
+
+                    <!-- Liste des feedbacks -->
+                    <ListView fx:id="listViewFeedbacks" styleClass="list-view" VBox.vgrow="ALWAYS"/>
+
+
+                    <!-- Section Boutons Actions et Tri alignés sur une ligne -->
+                    <HBox spacing="20" alignment="CENTER">
+                        <Label text="Actions :" styleClass="section-title"/>
+
+                        <!-- Bouton Supprimer -->
+
+
+                        <Region HBox.hgrow="ALWAYS"/> <!-- Pour pousser les boutons vers la droite -->
+
+                        <Label text="Trier par Rating :" styleClass="section-title"/>
+
+                        <!-- Boutons de tri -->
+                        <Button fx:id="btnTrierCroissant" onAction="#trierFeedbacksCroissant" styleClass="btn-primary" text="Trier Croissant"/>
+                        <Button fx:id="btnTrierDecroissant" onAction="#trierFeedbacksDecroissant" styleClass="btn-primary" text="Trier Décroissant"/>
+                    </HBox>
+
+                </VBox>
+            </VBox>
+        </ScrollPane>
+
+    </HBox>
+</AnchorPane>

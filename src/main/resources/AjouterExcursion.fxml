@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="512.0" prefWidth="600.0" style="-fx-background-color: rgba(10, 26, 47, 0.05);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AjouterExcursionController">
+   <stylesheets>
+      <URL value="@stylee.css" />
+   </stylesheets>
+   <children>
+      <Pane layoutY="52.0" prefHeight="374.0" prefWidth="346.0" style="-fx-border-color: rgba(184, 134, 11, 0.3); -fx-border-radius: 5; -fx-background-color: white; -fx-background-radius: 5;">
+         <!-- Label for Nom -->
+         <Label layoutX="30.0" layoutY="26.0" style="-fx-text-fill: rgba(10, 26, 47, 0.8);" text="Nom:" />
+         <TextField fx:id="nom" layoutX="115.0" layoutY="25.0" promptText="Ajouter un nom" style="-fx-border-color: rgba(184, 134, 11, 0.3); -fx-background-radius: 3;" />
+
+         <!-- Labels et ChoiceBoxes -->
+         <Label layoutX="18.0" layoutY="75.0" style="-fx-text-fill: rgba(10, 26, 47, 0.8);" text="Ville de départ:" />
+         <Label layoutX="26.0" layoutY="109.0" style="-fx-text-fill: rgba(10, 26, 47, 0.8);" text="Destination:" />
+         <ChoiceBox fx:id="VilleDepart" layoutX="124.0" layoutY="70.0" prefHeight="25.0" prefWidth="144.0" style="-fx-border-color: rgba(184, 134, 11, 0.3); -fx-background-color: white; -fx-background-radius: 3;" />
+         <ChoiceBox fx:id="lieu" layoutX="124.0" layoutY="104.0" prefHeight="25.0" prefWidth="144.0" style="-fx-border-color: rgba(184, 134, 11, 0.3); -fx-background-color: white; -fx-background-radius: 3;" />
+         <Label layoutX="41.0" layoutY="347.0" style="-fx-text-fill: rgba(10, 26, 47, 0.8);" text="Guide:" />
+      </Pane>
+
+      <!-- Image Section -->
+      <Pane layoutX="364.0" layoutY="75.0" style="-fx-border-color: rgba(184, 134, 11, 0.3); -fx-border-radius: 5;">
+         <children>
+            <ImageView fx:id="imageView" fitHeight="152.0" fitWidth="210.0" layoutX="-10.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Button fx:id="btnimage" layoutX="365.0" layoutY="264.0" prefHeight="39.0" prefWidth="212.0" style="-fx-background-color: rgba(30, 58, 138, 0.8); -fx-text-fill: white; -fx-background-radius: 3;" text="⬇ Télécharger image" />
+
+      <!-- Titre principal -->
+      <Label layoutX="141.0" layoutY="14.0" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: rgba(30, 58, 138, 0.9);" text="Ajouter une excursion">
+         <effect>
+            <DropShadow color="rgba(212, 175, 55, 0.3)" radius="3" />
+         </effect>
+      </Label>
+
+      <!-- Champs de formulaire -->
+      <Label layoutX="36.0" layoutY="200.0" style="-fx-text-fill: rgba(10, 26, 47, 0.8);" text="Prix:" />
+      <Label layoutX="29.0" layoutY="238.0" style="-fx-text-fill: rgba(10, 26, 47, 0.8);" text="Date Aller:" />
+      <Label layoutX="30.0" layoutY="274.0" style="-fx-text-fill: rgba(10, 26, 47, 0.8);" text="Date Retour:" />
+      <Label layoutX="30.0" layoutY="314.0" style="-fx-text-fill: rgba(10, 26, 47, 0.8);" text="Description:" />
+      <Label layoutX="13.0" layoutY="351.0" style="-fx-text-fill: rgba(10, 26, 47, 0.8);" text="Nb participants:" />
+
+      <!-- Champs de saisie -->
+      <TextField fx:id="prix" layoutX="114.0" layoutY="193.0" promptText="Prix" style="-fx-border-color: rgba(184, 134, 11, 0.3); -fx-background-radius: 3;" />
+      <DatePicker fx:id="datealler" layoutX="114.0" layoutY="231.0" style="-fx-background-color: rgba(30, 58, 138, 0.8); -fx-text-fill: white;" />
+      <DatePicker fx:id="dateretour" layoutX="114.0" layoutY="271.0" style="-fx-background-color: rgba(30, 58, 138, 0.8); -fx-text-fill: white;" />
+      <TextField fx:id="desc" layoutX="114.0" layoutY="311.0" promptText="Description" style="-fx-border-color: rgba(184, 134, 11, 0.3); -fx-background-radius: 3;" />
+      <ComboBox fx:id="guide" layoutX="114.0" layoutY="385.0" prefHeight="6.0" prefWidth="151.0" style="-fx-background-color: rgba(30, 58, 138, 0.8); -fx-text-fill: white;" />
+      <TextField fx:id="NbMax" layoutX="114.0" layoutY="344.0" promptText="Participants" style="-fx-border-color: rgba(184, 134, 11, 0.3); -fx-background-radius: 3;" />
+
+      <!-- Bouton Ajouter -->
+      <Button fx:id="ajouterButton" layoutX="209.0" layoutY="432.0" prefHeight="39.0" prefWidth="238.0" style="-fx-background-color: rgba(212, 175, 55, 0.8); -fx-text-fill: rgba(10, 26, 47, 0.9); -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 10 20;" text="➕ Ajouter Excursion" textFill="WHITE">
+         <effect>
+            <DropShadow color="rgba(184, 134, 11, 0.2)" radius="3" />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>

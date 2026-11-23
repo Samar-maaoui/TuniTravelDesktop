@@ -1,0 +1,39 @@
+/* Applique Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+.root {
+    -fx-font-family: 'Montserrat', sans-serif;
+}
+
+/* Style des champs */
+.text-field, .password-field, .combo-box, .date-picker {
+    -fx-pref-height: 40px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 5px;
+}
+
+/* Effet focus */
+.text-field:focused, .password-field:focused, .combo-box:focused, .date-picker:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+}
+
+/* Style du bouton */
+.btn-primary {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-pref-width: 200px;
+}
+
+/* Effet hover */
+.btn-primary:hover {
+    -fx-background-color: #2980b9;
+}

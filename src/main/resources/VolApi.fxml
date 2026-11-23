@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VolApiController" spacing="15" alignment="CENTER" prefWidth="500" prefHeight="600">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Label d'information en haut de la TextField -->
+    <Label text="Airport Info" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+    <!-- TextField pour la recherche d'aéroport -->
+    <TextField fx:id="searchField" promptText="Enter airport name" style="-fx-font-size: 14px; -fx-padding: 10px;" />
+
+    <!-- Bouton de recherche -->
+    <Button text="Search" onAction="#onSearchButtonClick" style="-fx-font-size: 16px; -fx-padding: 10px 20px; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;" />
+
+    <!-- ListView pour afficher les résultats -->
+    <ListView fx:id="resultList" style="-fx-pref-height: 300px; -fx-border-color: #cccccc; -fx-border-width: 1px;" />
+</VBox>

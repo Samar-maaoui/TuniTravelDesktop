@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.AfficherPackVoyageController"
+            style="-fx-background-color: white;">
+
+    <StackPane alignment="CENTER">
+        <VBox spacing="20" alignment="CENTER" prefWidth="1360" prefHeight="800">
+            <padding>
+                <Insets top="40" right="50" bottom="40" left="50"/>
+            </padding>
+
+            <!-- Titre de la section -->
+            <Label text="🌍✈ Gestion des Packs de Voyage"
+                   style="-fx-font-size: 26px; -fx-font-weight: bold;
+                          -fx-text-fill: #1565c0; -fx-alignment: CENTER;
+                          -fx-background-color: #E3F2FD;
+                          -fx-padding: 15px; -fx-border-radius: 10px; -fx-background-radius: 10px;"/>
+
+            <!-- Filtrer par nom -->
+            <Label text="Filtrer par nom :"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #1565c0;"/>
+            <TextField fx:id="tf_recherche" promptText="Entrez un nom..." prefWidth="300"
+                       style="-fx-background-color: #f1f1f1; -fx-font-size: 14px; -fx-border-radius: 5;"/>
+
+            <!-- Trier par -->
+            <Label text="Trier par :"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #1565c0;"/>
+            <ComboBox fx:id="cb_tri" prefWidth="200" style="-fx-font-size: 14px;">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Prix"/>
+                        <String fx:value="Places restantes"/>
+                        <String fx:value="Nom"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+
+            <!-- Liste des packs de voyage -->
+            <ListView fx:id="lv_packVoyage" prefHeight="400" prefWidth="600"
+                      style="-fx-border-color: #1565c0; -fx-border-radius: 5;
+                             -fx-padding: 5; -fx-background-radius: 8;"/>
+
+            <!-- Détails du pack sélectionné -->
+            <ListView fx:id="lv_detailsPack" prefHeight="300" prefWidth="600"
+                      style="-fx-border-color: #1565c0; -fx-border-radius: 5;
+                             -fx-padding: 5; -fx-background-radius: 8;"/>
+
+            <!-- Boutons d'actions -->
+            <HBox spacing="15" alignment="CENTER">
+                <Button fx:id="btn_modifier" text="✏ Modifier" onAction="#handleModifierPack"
+                        prefHeight="40" prefWidth="130"
+                        style="-fx-background-color: #FFA000; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;"/>
+
+                <Button fx:id="btn_supprimer" text="🗑 Supprimer" onAction="#handleSupprimerPack"
+                        prefHeight="40" prefWidth="130"
+                        style="-fx-background-color: #D32F2F; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;"/>
+
+                <Button fx:id="btn_ajouter" text="➕ Ajouter un Pack" onAction="#handleAjouterPack"
+                        prefHeight="40" prefWidth="200"
+                        style="-fx-background-color: #42a5f5; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;"/>
+
+                <Button fx:id="btn_reservation" text="📅 Gestion des Réservations"
+                        onAction="#handleGestionReservations"
+                        prefHeight="40" prefWidth="250"
+                        style="-fx-background-color: #66BB6A; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;"/>
+                <Button fx:id="btn_dashboard" text="📊 Dashboard"
+                        onAction="#handleOpenDashboard"
+                        prefHeight="40" prefWidth="160"
+                        style="-fx-background-color: #8E44AD; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;"/>
+
+
+            </HBox>
+
+        </VBox>
+    </StackPane>
+</AnchorPane>

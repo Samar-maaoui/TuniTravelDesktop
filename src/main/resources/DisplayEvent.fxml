@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.DisplayEventController">
+    <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="ALWAYS" prefHeight="600.0" prefWidth="800.0" maxWidth="Infinity" maxHeight="Infinity" AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" >
+    <VBox alignment="CENTER" spacing="20">
+        <padding>
+            <Insets bottom="20" left="20" right="20" top="20"  />
+        </padding>
+        <Label text="Liste des Reservation" />
+
+        <!-- ListView to display events -->
+        <ListView fx:id="reservationsList" prefHeight="200.0" prefWidth="400.0" />
+
+        <!-- Buttons for update and delete -->
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Mettre à jour" fx:id="updateButton" onAction="#handleUpdate"/>
+            <Button text="Supprimer" fx:id="deleteButton" onAction="#handleDelete"/>
+        </HBox>
+    </VBox>
+    </ScrollPane>
+</AnchorPane>

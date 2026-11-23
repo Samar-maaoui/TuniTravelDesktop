@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: rgba(10, 26, 47, 0.05);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ListeReservation">
+    <stylesheets>
+        <URL value="@stylee.css" />
+    </stylesheets>
+
+    <!-- Titre avec dégradé et ombre -->
+    <Text fx:id="title" fill="#020481" layoutX="29.4" layoutY="57.4" style="-fx-font-size: 28; -fx-font-weight: bold;" text="                               Liste des Réservations" wrappingWidth="625.9945373535156">
+
+        Liste des Réservations
+        <effect>
+            <DropShadow color="rgba(184, 134, 11, 0.3)" radius="3" />
+        </effect>
+        <AnchorPane.leftAnchor>29.4</AnchorPane.leftAnchor>
+        <AnchorPane.topAnchor>30.4</AnchorPane.topAnchor>
+    </Text>
+
+    <!-- ListView stylisé -->
+    <ListView fx:id="listViewReservations" style="-fx-background-color: white; -fx-border-radius: 10; -fx-background-radius: 10; -fx-border-color: rgba(184, 134, 11, 0.3);" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="80.0">
+        <effect>
+            <DropShadow color="rgba(10, 26, 47, 0.1)" radius="5" />
+        </effect>
+    </ListView>
+</AnchorPane>

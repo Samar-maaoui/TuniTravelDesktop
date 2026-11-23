@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+
+<AnchorPane prefHeight="712.0" prefWidth="812.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AffGuide">
+    <stylesheets>
+        <URL value="@stylee.css" />
+    </stylesheets>
+    <children>
+        <!-- ListView affichant les éléments -->
+        <ListView fx:id="listView" layoutX="14.0" layoutY="90.0" prefHeight="534.0" prefWidth="344.0" style="-fx-background-color: rgba(30, 58, 138, 1);">
+            <effect>
+                <DropShadow>
+                    <color>
+                        <Color red="0.75789475440979" green="0.75789475440979" blue="0.75789475440979" />
+                    </color>
+                </DropShadow>
+            </effect></ListView>
+
+        <!-- Section de détail pour le guide sélectionné -->
+        <ScrollPane layoutX="370.0" layoutY="101.0" prefHeight="454.0" prefWidth="387.0">
+            <content>
+                <VBox fx:id="detailsVBox" prefHeight="406.0" prefWidth="331.0" spacing="5.0">
+                    <!-- Les informations du guide seront affichées ici -->
+                    <ImageView fx:id="guideImageView" fitHeight="135.0" fitWidth="359.0" pickOnBounds="true" preserveRatio="true" />
+                    <HBox fx:id="guideNameHBox" spacing="10">
+                        <children>
+                            <Label fx:id="nameLabel" prefHeight="23.0" prefWidth="362.0" style="-fx-font-size: 20;" text="Nom du Guide" textFill="#0d0d0d" />
+                        </children>
+                    </HBox>
+                    <Label fx:id="langueLabel" prefHeight="23.0" prefWidth="346.0" style="-fx-font-size: 20;" text="Langue" textFill="#0d0d0d" />
+                    <Label fx:id="email" prefHeight="23.0" prefWidth="327.0" style="-fx-font-size: 20;" text="Email" textFill="#0d0d0d" />
+                    <Label fx:id="Telephone" prefHeight="23.0" prefWidth="355.0" style="-fx-font-size: 20;" text="Telephone" textFill="#0d0d0d" />
+                    <Button fx:id="btnModidfier" mnemonicParsing="false" onAction="#handleModifier" prefHeight="38.0" prefWidth="114.0" text="🖊 Modifier" />
+                    <Button fx:id="btnSupprimer" mnemonicParsing="false" onAction="#handleSupprimer" prefHeight="38.0" prefWidth="122.0" text="❌ Supprimer">
+                        <opaqueInsets>
+                            <Insets />
+                        </opaqueInsets>
+                        <VBox.margin>
+                            <Insets />
+                        </VBox.margin>
+                    </Button>
+                </VBox>
+            </content>
+        </ScrollPane>
+        <Button fx:id="ajouter" layoutX="545.0" layoutY="569.0" mnemonicParsing="false" onAction="#handleAjouterGuide" prefHeight="54.0" prefWidth="178.0" text="➕​ Ajouter" />
+        <Label contentDisplay="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="47.0" prefWidth="344.0" style="-fx-font-size: 40;" text="𝐋𝐢𝐬𝐭𝐞 𝐝𝐞𝐬 𝐠𝐮𝐢𝐝𝐞𝐬" textFill="DARKGOLDENROD" underline="true" />
+    </children>
+</AnchorPane>

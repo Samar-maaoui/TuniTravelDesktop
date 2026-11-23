@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane prefHeight="588.0" prefWidth="806.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AfficherGuideController">
+
+    <children>
+        <Pane layoutY="20.0" prefHeight="304.0" prefWidth="333.0" AnchorPane.bottomAnchor="60.799999999999955" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.799999999999955" AnchorPane.topAnchor="20.0">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <children>
+                <TableView fx:id="tableViewGuides" accessibleRole="BUTTON" editable="true" layoutX="72.0" layoutY="29.0" prefHeight="401.0" prefWidth="565.0" style="-fx-border-color: orange; -fx-border-width: 2;">
+                    <columns>
+                        <TableColumn fx:id="nomPrenomColumn" prefWidth="130.4000244140625" text="Nom et Prénom" />
+                        <TableColumn fx:id="emailColumn" prefWidth="105.59999084472656" text="Email" />
+                        <TableColumn fx:id="telColumn" prefWidth="87.20001220703125" text="Téléphone" />
+                        <TableColumn fx:id="langueColumn" prefWidth="68.79998779296875" text="Langue" />
+                        <TableColumn fx:id="actionColumn" prefWidth="172.0" text="Actions" />
+                    </columns>
+                </TableView>
+            </children>
+        </Pane>
+        <Button fx:id="ajouterGuideButton" text="Ajouter Guide" layoutX="70.0" layoutY="500.0" styleClass="ajouter-guide-button" onAction="#handleAjouterGuide" />
+    </children>
+</AnchorPane>

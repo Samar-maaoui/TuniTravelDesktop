@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="289.0" prefWidth="231.0" style="-fx-background-color: rgba(10, 26, 47, 0.05);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReservationExcursionController">
+    <stylesheets>
+        <URL value="@stylee.css" />
+    </stylesheets>
+    <children>
+        <Pane layoutX="47.0" layoutY="50.0">
+            <children>
+                <VBox layoutX="-28.0" layoutY="-30.0" prefHeight="239.0" prefWidth="209.0" spacing="10" style="-fx-background-color: white; -fx-border-radius: 10; -fx-background-radius: 10; -fx-border-color: rgba(184, 134, 11, 0.3);">
+                    <Label fx:id="excursionLabel" prefHeight="40.0" prefWidth="238.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: rgba(30, 58, 138, 0.9);" text="Réserver vos places">
+                        <effect>
+                            <DropShadow color="rgba(212, 175, 55, 0.3)" radius="2" />
+                        </effect>
+                    </Label>
+
+                    <Label prefHeight="15.0" prefWidth="143.0" style="-fx-text-fill: rgba(10, 26, 47, 0.8); -fx-font-size: 15;" text="Nombre de places :" />
+
+                    <Spinner fx:id="nbrPlacesSpinner" style="-fx-border-color: rgba(184, 134, 11, 0.3); -fx-background-color: white; -fx-background-radius: 3;" />
+
+                    <Label fx:id="montantTotalLabel" style="-fx-text-fill: rgba(184, 134, 11, 0.9); -fx-font-weight: bold;" text="💲 Montant Total: 0 TND" />
+
+                    <Button fx:id="reserverButton" prefHeight="34.0" prefWidth="210.0" style="-fx-background-color: rgba(212, 175, 55, 0.8); -fx-text-fill: rgba(10, 26, 47, 0.9); -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 8 20;" text="✔ Reserver">
+                        <effect>
+                            <DropShadow color="rgba(184, 134, 11, 0.2)" radius="3" />
+                        </effect>
+                    </Button>
+                </VBox>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

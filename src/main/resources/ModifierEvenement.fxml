@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane prefHeight="524.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifierEvenementController">
+    <!-- Logo Image -->
+
+    <!-- VBox for Form Fields -->
+    <VBox fx:id="formContainer" alignment="CENTER" layoutY="130.0" prefHeight="430.0" prefWidth="600.0" spacing="15" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+
+
+
+        <TextField fx:id="txtNom" promptText="Entrez le nom" styleClass="text-field" />
+        <TextField fx:id="txtDescription" promptText="Entrez la description" styleClass="text-field" />
+        <TextField fx:id="txtLieu" promptText="Entrez le lieu" styleClass="text-field" />
+
+        <!-- Date Picker for Date Entry -->
+        <DatePicker fx:id="datePicker" minWidth="700.0" promptText="Entrez la date" styleClass="date-picker" />
+
+        <TextField fx:id="txtCapacite" promptText="Entrez la capacité" styleClass="text-field" />
+
+        <!-- ComboBox for Type Selection -->
+        <ComboBox fx:id="comboBoxType" minWidth="700.0" promptText="Sélectionnez le type" styleClass="combo-box" />
+
+        <TextField fx:id="txtOrganisateur" promptText="Entrez l'organisateur" styleClass="text-field" />
+        <TextField fx:id="txtPrix" promptText="Entrez le prix" styleClass="text-field" />
+
+        <!-- Submit Button -->
+        <Button onAction="#modifierEvenement" text="Modifier" />
+    </VBox>
+</AnchorPane>

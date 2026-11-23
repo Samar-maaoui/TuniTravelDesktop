@@ -1,0 +1,45 @@
+/* Styles pour l'interface */
+VBox {
+    -fx-background-color: #f4f4f4;
+    -fx-padding: 15px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+/* Labels */
+Label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+}
+
+/* ListView */
+ListView {
+    -fx-background-color: white;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5px;
+}
+
+/* Boutons */
+.action-button {
+    -fx-background-color: #ff4d4d;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+}
+
+.action-button:hover {
+    -fx-background-color: #ff1a1a;
+}
+
+.sync-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+}
+
+.sync-button:hover {
+    -fx-background-color: #45a049;
+}

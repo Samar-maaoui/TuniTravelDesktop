@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane prefHeight="466.0" prefWidth="1037.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AfficherMap">
+   <children>
+      <HBox layoutY="-8.800000190734863">
+         <children>
+            <WebView fx:id="webView" prefHeight="475.0" prefWidth="968.0" />
+            <VBox fx:id="mainContainer" prefHeight="475.0" prefWidth="306.0">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="184.0" fitWidth="366.0" pickOnBounds="true" preserveRatio="true" />
+                  <TextArea fx:id="textArea" editable="false" prefHeight="291.0" prefWidth="369.0" visible="false" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

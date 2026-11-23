@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="800" prefWidth="1300" stylesheets="@menu-admin.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuAdminController">
+    <HBox prefHeight="800" prefWidth="1300" spacing="0">
+        <!-- Menu latéral avec ScrollPane -->
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="sidebar-scroll" VBox.vgrow="ALWAYS">
+            <VBox styleClass="sidebar" VBox.vgrow="ALWAYS">
+                <Label styleClass="menu-title" text="Administration" />
+
+                <!-- Section Recherche -->
+                <VBox styleClass="section">
+                    <Label styleClass="section-title" text="Recherche Utilisateur" />
+                    <HBox styleClass="search-box">
+                        <TextField fx:id="cinTextField" promptText="Entrer CIN" styleClass="search-field" HBox.hgrow="ALWAYS" />
+                    </HBox>
+                    <Button onAction="#filtrerutilisateur" styleClass="btn-primary" text="Statistique" />
+                </VBox>
+
+
+                <!-- Section Filtres -->
+                <VBox styleClass="section">
+                    <Label styleClass="section-title" text="Filtres" />
+                    <ComboBox fx:id="typeUtilisateurComboBox" maxWidth="Infinity" promptText="Type d'utilisateur" />
+                </VBox>
+
+                <VBox.margin>
+                    <Insets bottom="20" />
+                </VBox.margin>
+            </VBox>
+        </ScrollPane>
+
+        <!-- Conteneur principal avec ScrollPane -->
+        <ScrollPane fitToWidth="true" pannable="true" styleClass="main-scroll" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+            <VBox spacing="20">
+                <padding>
+                    <Insets bottom="20" left="20" right="20" top="20" />
+                </padding>
+
+                <HBox alignment="CENTER_LEFT" spacing="20">
+                    <Label styleClass="welcome-title" text="Tableau de bord" />
+                    <Region HBox.hgrow="ALWAYS" />
+                </HBox>
+
+                <VBox spacing="20" styleClass="main-container">
+                    <!-- En-tête de la liste -->
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label styleClass="section-title" text="Liste des utilisateurs" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="totalUsersLabel" text="Total: 0 utilisateurs" />
+                    </HBox>
+
+                    <!-- Liste des utilisateurs avec style amélioré -->
+                    <ListView fx:id="listViewUtilisateurs" minHeight="300" style="-fx-border-color: #107cfc;" styleClass="list-view" VBox.vgrow="ALWAYS">
+                        <placeholder>
+                            <Label styleClass="placeholder-label" text="Aucun utilisateur trouvé" />
+                        </placeholder>
+                    </ListView>
+
+                    <!-- Conteneur pour le graphique -->
+                    <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="600" minHeight="400" styleClass="stats-scroll">
+                        <VBox fx:id="graphContainer" styleClass="graph-container" VBox.vgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="20" left="20" right="20" top="20" />
+                            </padding>
+                        </VBox>
+                    </ScrollPane>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </HBox>
+</AnchorPane>

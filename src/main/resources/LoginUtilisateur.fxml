@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Pos?>
+<?import java.net.URL?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+
+    <VBox alignment="CENTER" spacing="20"
+          AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0"
+          AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0"
+          style="-fx-background-color: #f4f4f4; -fx-padding: 30;">
+
+        <!-- Conteneur du Logo -->
+        <VBox alignment="CENTER" spacing="5" style="-fx-padding: 20;">
+            <ImageView fx:id="logo" fitWidth="160" fitHeight="160">
+                <image>
+                    <Image url="/image_optimized.png" />
+                </image>
+            </ImageView>
+        </VBox>
+
+        <!-- Titre -->
+        <Label text="Connexion" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+
+        <!-- Formulaire -->
+        <VBox spacing="12" style="-fx-background-color: white; -fx-padding: 20;
+                                 -fx-border-radius: 12; -fx-background-radius: 12;
+                                 -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 12, 0, 0, 6);">
+
+            <TextField fx:id="emailField" promptText="Email" />
+            <PasswordField fx:id="passwordField" promptText="Mot de passe" />
+
+            <Button fx:id="btnConnexion" text="Se connecter" styleClass="btn-primary" onAction="#handleLogin"/>
+
+            <Hyperlink text="Créer un compte" onAction="#goToRegister"/>
+
+        </VBox>
+
+    </VBox>
+</AnchorPane>

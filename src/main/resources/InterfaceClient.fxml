@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefWidth="800.0" stylesheets="@interfaces.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InterfaceClientController">
+    <left>
+        <VBox opacity="0.68" prefHeight="589.0" prefWidth="241.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="98.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/logopng.png" />
+                    </image>
+                    <VBox.margin>
+                        <Insets left="20.0" top="20.0" />
+                    </VBox.margin>
+                </ImageView>
+                <HBox onMouseClicked="#gotoGestionPosts">
+                    <VBox.margin>
+                        <Insets left="15.0" top="20.0" />
+                    </VBox.margin>
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/poster.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets top="5.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <Label text="Post">
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="Microsoft Himalaya" size="37.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox layoutX="25.0" layoutY="30.0" onMouseClicked="#afficherVols" prefHeight="24.0" prefWidth="100.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/billet-davion.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </ImageView>
+                        <Label text="Vols">
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="Microsoft Himalaya" size="37.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <VBox.margin>
+                        <Insets left="15.0" top="10.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox layoutX="10.0" layoutY="54.0" onMouseClicked="#gotoGestionPackVoyage" prefHeight="24.0" prefWidth="100.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/avion.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets top="5.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <Label prefHeight="47.0" prefWidth="142.0" text="Pack voyage">
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="Microsoft Himalaya" size="37.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <VBox.margin>
+                        <Insets left="15.0" top="10.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox layoutX="10.0" layoutY="78.0" onMouseClicked="#gotoMenuEvenement" prefHeight="24.0" prefWidth="100.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/avion.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets top="5.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <Label prefHeight="47.0" prefWidth="140.0" text="Evénements">
+                            <font>
+                                <Font name="Microsoft Himalaya" size="37.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                    <VBox.margin>
+                        <Insets left="15.0" top="10.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox layoutX="10.0" layoutY="102.0" onMouseClicked="#gotoAfficherHotel" prefHeight="24.0" prefWidth="100.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/hotel.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets top="5.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <Label text="Hotel">
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="Microsoft Himalaya" size="37.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <VBox.margin>
+                        <Insets left="15.0" top="10.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox layoutX="25.0" layoutY="237.0" onMouseClicked="#gotoMenuExcursion" prefHeight="24.0" prefWidth="100.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/voyager.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets top="5.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <Label text="Excursion">
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="Microsoft Himalaya" size="37.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <VBox.margin>
+                        <Insets left="15.0" top="10.0" />
+                    </VBox.margin>
+                </HBox>
+            <HBox layoutX="25.0" layoutY="433.0" onMouseClicked="#gotoGuide" prefHeight="24.0" prefWidth="100.0">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/guide-touristique.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label text="Guide">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Microsoft Himalaya" size="37.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="15.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+                <Line endX="140.2928924560547" endY="27.585708618164062" fill="WHITE" startX="-100.0" startY="27.585784912109375">
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </Line>
+
+                <HBox onMouseClicked="#gotomenuclient" prefHeight="24.0" prefWidth="100.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/avatar-homme.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets top="5.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <Label prefHeight="47.0" prefWidth="164.0" text="Profil et Feedback">
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="Microsoft Himalaya" size="32.0" />
+                            </font>
+                        </Label>
+                    </children>
+               <VBox.margin>
+                  <Insets left="15.0" top="10.0" />
+               </VBox.margin>
+                </HBox>
+                <HBox layoutX="10.0" layoutY="564.0" onMouseClicked="#logout" prefHeight="24.0" prefWidth="100.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/se-deconnecter.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets top="5.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <Label text="Se deconnecter">
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="Microsoft Himalaya" size="37.0" />
+                            </font>
+                        </Label>
+                    </children>
+               <VBox.margin>
+                  <Insets left="15.0" top="10.0" />
+               </VBox.margin>
+                </HBox>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" BorderPane.alignment="CENTER">
+            <AnchorPane fx:id="contentArea" minHeight="0.0" minWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        </ScrollPane>
+    </center>
+</BorderPane>

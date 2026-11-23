@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane fx:id="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.AjouterVolController">    <children>
+        <VBox alignment="CENTER" spacing="10" AnchorPane.topAnchor="50" AnchorPane.bottomAnchor="50" AnchorPane.leftAnchor="150" AnchorPane.rightAnchor="150">
+            <Label text="ajouter Vol" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+            <TextField fx:id="disponibleField" promptText="Places disponibles"/>
+            <TextField fx:id="numeroVolField" promptText="Numéro de vol"/>
+            <TextField fx:id="compagnieField" promptText="Compagnie"/>
+            <TextField fx:id="aeroDepartField" promptText="Aéroport de départ"/>
+            <TextField fx:id="aeroArriveeField" promptText="Aéroport d'arrivée"/>
+            <TextField fx:id="prixField" promptText="Prix"/>
+            <DatePicker fx:id="dateDepartPicker" promptText="Date de départ"/>
+            <DatePicker fx:id="dateArriveePicker" promptText="Date d'arrivée"/>
+            <Button fx:id="btnAjouterVol" text="Ajouter" onAction="#ajoutervol" style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-padding: 10px;" />
+            <Button fx:id="gotoafficher" text="retour" onAction="#navigatetovolutili" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-padding: 10px;" />
+
+
+        </VBox>
+    </children>
+</AnchorPane>

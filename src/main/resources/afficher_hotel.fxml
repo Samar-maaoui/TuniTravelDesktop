@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.afficher_hotelController"
+            style="-fx-background-color: #f8f9fa;">
+
+    <children>
+        <!-- Conteneur Principal -->
+        <VBox layoutX="20.0" layoutY="20.0" spacing="15" style="-fx-padding: 20;">
+
+            <!-- Barre d'actions : Ajout et Retour -->
+            <HBox spacing="15" style="-fx-background-color: #2E8B57; -fx-padding: 15;">
+                <!-- Bouton Retour -->
+                <Button text="Retour" onAction="#RetournerPagePrecedente"
+                        style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-padding: 10; -fx-font-size: 14px; -fx-background-radius: 5;"/>
+                <!-- Bouton d'ajout d'hôtel -->
+                <Button fx:id="btnAjouterHotel" onAction="#openAddHotel" text="➕ Ajouter un Hôtel"
+                        style="-fx-background-color: #2E8B57; -fx-text-fill: white; -fx-padding: 10; -fx-font-size: 14px; -fx-background-radius: 5;"/>
+            </HBox>
+
+            <!-- Liste des hôtels -->
+            <VBox style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 1); -fx-background-radius: 5;">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Label text="Liste des Hôtels Disponibles"
+                       style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2E8B57; -fx-padding: 0 0 10 0;"/>
+
+                <ListView fx:id="lv_hotels" prefHeight="600.0" prefWidth="960.0"/>
+            </VBox>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,148 @@
+/* ==========================
+   STYLES GÉNÉRAUX
+   ========================== */
+
+.root {
+    -fx-background-color: #f3f4f6; /* Couleur de fond général */
+    -fx-font-family: "Segoe UI", sans-serif; /* Police de caractères */
+    -fx-font-size: 14px; /* Taille de police par défaut */
+}
+
+/* ==========================
+   FORMULAIRE D'AJOUT D'HÔTEL
+   ========================== */
+
+.form-container {
+    -fx-background-color: #f8f9fa; /* Arrière-plan clair pour le conteneur */
+    -fx-padding: 20; /* Espacement à l'intérieur du conteneur */
+    -fx-border-color: #ddd; /* Bordure grise */
+    -fx-border-radius: 10; /* Coins arrondis */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0.5, 0, 2); /* Effet d'ombre */
+}
+
+/* Styles pour les titres */
+.label {
+    -fx-font-size: 18px; /* Taille des titres */
+    -fx-text-fill: #333; /* Couleur sombre pour le texte */
+}
+
+/* Styles pour les champs de texte et de description */
+.text-field, .text-area, .toggle-button {
+    -fx-background-color: #ffffff; /* Fond blanc */
+    -fx-border-color: #dcdcdc; /* Bordure grise */
+    -fx-border-radius: 8px; /* Coins arrondis */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 2); /* Effet d'ombre léger */
+    -fx-padding: 10px; /* Espacement intérieur */
+    -fx-font-size: 14px; /* Taille de la police */
+}
+
+/* Styles pour le ToggleButton */
+.toggle-button {
+    -fx-background-color: #e74c3c; /* Rouge par défaut */
+    -fx-text-fill: white; /* Texte blanc */
+}
+
+/* État sélectionné du ToggleButton */
+.toggle-button:selected {
+    -fx-background-color: #27ae60; /* Vert si sélectionné */
+}
+
+/* Styles pour les boutons */
+.button {
+    -fx-background-color: #2980b9; /* Couleur principale des boutons */
+    -fx-text-fill: white; /* Texte blanc */
+    -fx-font-weight: bold; /* Gras */
+    -fx-padding: 10px 20px; /* Espacement autour du texte */
+    -fx-border-radius: 8px; /* Coins arrondis */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2); /* Effet d'ombre */
+    -fx-cursor: hand; /* Changer le curseur au survol */
+}
+
+/* État hover des boutons */
+.button:hover {
+    -fx-background-color: #1f6390; /* Couleur au survol */
+}
+
+/* Spécificités pour le bouton Annuler */
+#btnAnnuler {
+    -fx-background-color: #c0392b; /* Rouge pour le bouton Annuler */
+}
+
+/* État hover pour le bouton Annuler */
+#btnAnnuler:hover {
+    -fx-background-color: #a5281e; /* Couleur sombre au survol */
+}
+
+/* Spécificités pour le bouton Ajouter */
+#btnAjouter {
+    -fx-background-color: #27ae60; /* Vert pour le bouton Ajouter */
+}
+
+/* État hover pour le bouton Ajouter */
+#btnAjouter:hover {
+    -fx-background-color: #219150; /* Couleur sombre au survol */
+}
+/* ==========================
+   STYLES POUR LES HÔTELS
+   ========================== */
+
+/* Style principal de la liste des hôtels */
+.hotel-list-view {
+    -fx-background-color: #ffffff; /* Fond blanc pour la liste des hôtels */
+    -fx-border-color: #ddd;    -fx-border-radius: 8px; /* Coins arrondis */
+    -fx-padding: 10px; /* Espacement à l'intérieur de la liste */
+}
+
+/* Style des cellules de la liste des hôtels */
+.hotel-list-cell {
+    -fx-padding: 15px; /* Espacement à l'intérieur de chaque cellule */
+    -fx-font-size: 14px; /* Taille de la police des informations */
+    -fx-text-fill: #333; /* Noir/gris foncé */
+    -fx-border-color: #ddd; /* Gris clair */
+    -fx-border-width: 0 0 1px 0; /* Bordure en bas seulement */
+    -fx-background-color: transparent; /* Fond transparent pour les cellules */
+}
+
+/* Changement de couleur au survol d'une cellule */
+.hotel-list-cell:hover {
+    -fx-background-color: rgba(219, 191, 56, 0.2); /* Légère couleur au survol */
+}
+
+/* Style pour la boîte d'hôtels */
+.hotel-box {
+    -fx-background-color: #ffffff; /* Fond blanc pour chaque boîte d'hôtel */
+    -fx-padding: 15px; /* Espacement intérieur */
+    -fx-border-radius: 8px; /* Coins arrondis */
+    -fx-border-color: #ddd; /* Bordure grise */
+    -fx-border-width: 1px; /* Épaisseur de la bordure */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0.5, 0, 2); /* Ombre légère */
+}
+
+/* Styles pour les boutons Modifier et Supprimer */
+.hotel-button, .hotel-delete-button {
+    -fx-padding: 5px 10px; /* Espacement autour du texte */
+    -fx-border-radius: 5px; /* Coins arrondis */
+    -fx-font-size: 14px; /* Taille de la police */
+}
+
+/* Couleur des boutons Modifier */
+.hotel-button {
+    -fx-background-color: #3498db; /* Couleur bleue pour le bouton Modifier */
+    -fx-text-fill: white; /* Texte en blanc */
+}
+
+/* Couleur au survol du bouton Modifier */
+.hotel-button:hover {
+    -fx-background-color: #2980b9; /* Couleur sombre au survol */
+}
+
+/* Couleur des boutons Supprimer */
+.hotel-delete-button {
+    -fx-background-color: #d9534f; /* Couleur rouge pour le bouton Supprimer */
+    -fx-text-fill: white; /* Texte en blanc */
+}
+
+/* Couleur au survol du bouton Supprimer */
+.hotel-delete-button:hover {
+    -fx-background-color: #b71c1c; /* Couleur sombre au survol */
+}

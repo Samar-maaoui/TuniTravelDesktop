@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.FlowPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.AfficherPostController" style="-fx-background-color: white;">
+    <VBox spacing="20" alignment="TOP_CENTER" prefWidth="1360" prefHeight="800" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+        <padding>
+            <Insets top="40" right="60" bottom="40" left="60"/>
+        </padding>
+
+        <!-- Titre -->
+        <Label text="📑📝 Gestion des Posts"
+               style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #1E3A8A;
+                      -fx-background-color: #E5E7EB; -fx-padding: 15px 30px; -fx-background-radius: 10;" />
+
+        <!-- Barre de recherche et tri -->
+        <HBox spacing="30" alignment="CENTER">
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="🔍 Titre:" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #1565c0;" />
+                <TextField fx:id="tf_recherche" promptText="Entrez le titre"
+                           style="-fx-background-color: #f1f1f1; -fx-font-size: 14px; -fx-border-radius: 5;" />
+            </HBox>
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="🔽 Trier par:" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #1565c0;" />
+                <ComboBox fx:id="cb_tri" prefWidth="200" style="-fx-font-size: 14px;" />
+            </HBox>
+        </HBox>
+
+        <!-- Grille des posts -->
+        <ScrollPane fitToWidth="true" prefHeight="550" prefWidth="1200" style="-fx-background-color: transparent;">
+            <content>
+                <FlowPane fx:id="flowPanePosts" hgap="30" vgap="30"
+                          alignment="TOP_LEFT"
+                          style="-fx-padding: 20; -fx-background-color: white;" />
+
+            </content>
+        </ScrollPane>
+
+        <!-- Boutons d'action -->
+        <HBox spacing="20" alignment="CENTER">
+            <Button fx:id="btn_ajouter" text="➕ Ajouter"
+                    style="-fx-background-color: #3B82F6; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 24px;" />
+            <Button fx:id="btn_modifier" text="✏ Modifier"
+                    style="-fx-background-color: #F59E0B; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 24px;" />
+            <Button fx:id="btn_supprimer" text="🗑 Supprimer"
+                    style="-fx-background-color: #EF4444; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 24px;" />
+            <Button fx:id="btn_refraichir" text="🔄 Rafraîchir"
+                    style="-fx-background-color: #22C55E; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 24px;" />
+        </HBox>
+    </VBox>
+</AnchorPane>

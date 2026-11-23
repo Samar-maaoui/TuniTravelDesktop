@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/23.0.1"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="controller.DashboardAdminPVController"
+           stylesheets="@dashboard_admin_pv.css"
+           styleClass="full-white-background">
+
+    <VBox fx:id="dashboardContainer" spacing="30" alignment="TOP_CENTER" maxWidth="1200" styleClass="dashboard-container">
+
+        <!-- Titre -->
+        <Label fx:id="labelBienvenue" text="Bienvenue" styleClass="dashboard-title"/>
+
+        <!-- Ligne 1 : Top 3 + Posts + Total -->
+        <HBox spacing="30" alignment="CENTER" styleClass="section-box">
+            <VBox spacing="10" alignment="TOP_CENTER">
+                <Label text="📊 Top 3 des Packs les plus Réservés" styleClass="section-title"/>
+                <ListView fx:id="listTopPacks" prefHeight="150" prefWidth="350" styleClass="styled-list"/>
+            </VBox>
+
+            <VBox spacing="10" alignment="TOP_CENTER">
+                <Label text="📬 Posts Actifs (Annonces disponibles)" styleClass="section-title"/>
+                <ListView fx:id="listPostsActifs" prefHeight="150" prefWidth="350" styleClass="styled-list"/>
+            </VBox>
+
+            <VBox spacing="10" alignment="CENTER">
+                <Label fx:id="labelTotalPacks" text="Total de packs enregistrés : ..." styleClass="info-label"/>
+            </VBox>
+        </HBox>
+
+        <!-- Ligne 2 : Graphiques -->
+        <HBox spacing="30" alignment="CENTER" styleClass="section-box">
+            <VBox spacing="10" alignment="CENTER">
+                <Label text="📈 Répartition des Places Restantes" styleClass="section-title"/>
+                <PieChart fx:id="pieChartPlaces" prefHeight="300" prefWidth="400"/>
+            </VBox>
+
+            <VBox spacing="10" alignment="CENTER">
+                <Label text="📊 Réservations par Pack (Top 3)" styleClass="section-title"/>
+                <BarChart fx:id="barChartReservations" prefHeight="300" prefWidth="500">
+                    <xAxis>
+                        <CategoryAxis label="Pack"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Réservations"/>
+                    </yAxis>
+                </BarChart>
+            </VBox>
+        </HBox>
+
+        <!-- Bouton de fermeture -->
+        <Button text="❌ Fermer le Dashboard" onAction="#handleFermerDashboard"
+                styleClass="close-button" prefWidth="200" prefHeight="40"/>
+    </VBox>
+</StackPane>

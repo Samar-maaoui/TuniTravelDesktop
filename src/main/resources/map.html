@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html>
+        <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carte avec Leaflet</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <style>
+        #map { height: 100vh; }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+    var map = L.map('map').setView([36.8065, 10.1815], 10); // Coordonnées de Tunis
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    function addMarker(lat, lng, info) {
+        L.marker([lat, lng]).addTo(map)
+            .bindPopup(info)
+            .openPopup();
+    }
+
+    // Fonction appelée depuis JavaFX
+    function receiveCoordinates(coordList) {
+        let coords = JSON.parse(coordList);
+        coords.forEach(coord => {
+            addMarker(coord.lat, coord.lng, coord.info);
+        });
+    }
+</script>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>

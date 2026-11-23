@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Afficher_ReservationsController">
+    <children>
+        <VBox spacing="20" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+            <HBox spacing="10">
+                <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                <Button text="⬅ Retour" fx:id="btnRetour" onAction="#retour" style="-fx-background-color: #d9534f; -fx-text-fill: white;"/>
+            </HBox>
+            <ListView fx:id="listViewReservations" VBox.vgrow="ALWAYS"/>
+            <HBox spacing="15" VBox.vgrow="ALWAYS">  <!-- Add VBox.vgrow="ALWAYS" here -->
+                <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                <Button text="🗑 Supprimer" fx:id="btnSupprimer" onAction="#handleSupprimerReservation" style="-fx-background-color: #d9534f; -fx-text-fill: white;"/>
+                <Button text="➕ Réserver" fx:id="btnAjouterReservation" onAction="#ajouterReservation" style="-fx-background-color: #5cb85c; -fx-text-fill: white;"/>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

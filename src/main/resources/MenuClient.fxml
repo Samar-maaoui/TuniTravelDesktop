@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800" prefWidth="1300" stylesheets="menu-client.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuClientController">
+    <HBox prefHeight="800" prefWidth="1300" spacing="20">
+        <!-- Menu latéral avec ScrollPane -->
+        <ScrollPane fitToWidth="true" styleClass="sidebar-scroll">
+            <VBox styleClass="sidebar">
+
+
+                <Label styleClass="menu-title" text="Espace Client">
+
+                </Label>
+
+
+
+            </VBox>
+        </ScrollPane>
+
+        <!-- Conteneur principal avec ScrollPane -->
+        <ScrollPane fitToWidth="true" styleClass="main-scroll" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS">
+            <VBox spacing="20">
+                <HBox alignment="CENTER_LEFT" spacing="20" styleClass="profile-header">
+                    <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="profile-avatar">
+                        <image>
+                            <Image url="images/avatar-homme.png" />
+                        </image>
+                    </ImageView>
+                    <VBox>
+                        <Label fx:id="welcomeLabel" styleClass="welcome-title" text="Bienvenue sur votre espace client" />
+                        <Label fx:id="userTypeLabel" styleClass="profile-type" text="Type: NORMAL" />
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS" />
+                </HBox>
+                <VBox styleClass="main-container" spacing="20">
+                    <!-- Informations utilisateur avec le nouveau design -->
+
+                    <!-- Historique ou autres informations -->
+
+
+                        <VBox styleClass="section">
+                            <ListView fx:id="listView" styleClass="list-view" VBox.vgrow="ALWAYS" />
+                            <VBox styleClass="button-group">
+                                <Button fx:id="btnModifierCompte" onAction="#modifierUtilisateur" styleClass="btn-primary" text="Modifier mon compte" />
+                                <Button fx:id="btnSupprimerCompte" onAction="#supprimerCompte" styleClass="btn-danger" text="Supprimer mon compte" />
+                            </VBox>
+                        </VBox>
+
+                    <!-- Section Feedback -->
+                    <TitledPane text="Mes Feedbacks" expanded="false" styleClass="history-pane">
+                        <VBox styleClass="feedback-container" spacing="15">
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Label text="Mes Feedbacks" styleClass="section-title">
+                                    <graphic>
+                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="images/commentaires-des-clients.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Label>
+                                <Region HBox.hgrow="ALWAYS" />
+                                <HBox spacing="10" alignment="CENTER_RIGHT">
+                                    <Button fx:id="btnAjouterFeedback" onAction="#afficherAjouterFeedback" styleClass="btn-primary" text="Ajouter un feedback" />
+                                    <!-- Removed the Modifier and Supprimer buttons from here -->
+                                </HBox>
+                            </HBox>
+
+                            <ListView fx:id="feedbackListView" styleClass="list-view" VBox.vgrow="ALWAYS" />
+                        </VBox>
+                    </TitledPane>
+
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+    </HBox>
+</AnchorPane>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane fx:id="rootPane" prefHeight="600" prefWidth="1000"
+            styleClass="root-pane"
+            xmlns:fx="http://javafx.com/fxml/1"
+            stylesheets="@feedback_client.css"
+            xmlns="http://javafx.com/javafx/17"
+            fx:controller="controller.Feedbackcontroller">
+
+    <HBox spacing="0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0"
+          AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+
+        <!-- Barre latérale -->
+        <VBox styleClass="sidebar" spacing="20">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="Gestion des Feedbacks" styleClass="sidebar-title"/>
+
+            <VBox spacing="10">
+                <Label text="Recherche" styleClass="section-label"/>
+                <TextField fx:id="searchField" promptText="Rechercher un feedback..."
+                           styleClass="search-field"/>
+            </VBox>
+
+            <VBox spacing="10">
+                <Label text="Actions" styleClass="section-label"/>
+                <Button fx:id="btnAjouterFeedback" text="➕ Ajouter Feedback"
+                        onAction="#afficherAjouterFeedback" styleClass="btn-primary"/>
+                <Button fx:id="btnModifierFeedback" text="✏ Modifier Feedback"
+                        onAction="#modifierFeedback" styleClass="btn-primary"/>
+                <Button fx:id="btnSupprimerFeedback" text="❌ Supprimer Feedback"
+                        onAction="#supprimerFeedback" styleClass="btn-danger"/>
+            </VBox>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button fx:id="btnRetournerMenu" text="🔙 Retour au menu"
+                    onAction="#retournerMenu" styleClass="btn-secondary"/>
+        </VBox>
+
+        <!-- Contenu principal -->
+        <VBox HBox.hgrow="ALWAYS" styleClass="main-content">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="Vos Feedbacks" styleClass="page-title"/>
+
+            <ListView fx:id="feedbackListView" VBox.vgrow="ALWAYS"
+                      styleClass="feedback-list"/>
+        </VBox>
+    </HBox>
+</AnchorPane>

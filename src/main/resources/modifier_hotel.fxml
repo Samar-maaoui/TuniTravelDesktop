@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane prefHeight="800" prefWidth="600" xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.modifier_hotelController"
+            style="-fx-background-color: #f8f9fa;">
+
+   <children>
+      <VBox alignment="CENTER" spacing="15" styleClass="form-container" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50">
+         <Button text="Retour" onAction="#fermerFenetre" styleClass="button-danger"
+                 style="-fx-background-color: transparent; -fx-text-fill: #6c757d; -fx-border-color: #6c757d; -fx-border-radius: 5; -fx-font-size: 14px; -fx-padding: 8 15;"/>
+
+         <Label text="Modifier un Hôtel" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2E8B57;"/>
+
+         <TextField fx:id="txtNommodifier" promptText="Nom"
+                    style="-fx-pref-width: 500; -fx-pref-height: 40; -fx-font-size: 14px;"/>
+         <TextField fx:id="txtPrixmodifier" promptText="Prix/Nuit"
+                    style="-fx-pref-width: 500; -fx-pref-height: 40; -fx-font-size: 14px;"/>
+         <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label text="Disponibilité:" style="-fx-font-size: 14px;"/>
+            <ToggleButton fx:id="btnDisponible" text="Indisponible"
+                          style="-fx-pref-height: 40; -fx-font-size: 14px;"/>
+         </HBox>
+         <TextField fx:id="txtAdressemodifier" promptText="Adresse"
+                    style="-fx-pref-width: 500; -fx-pref-height: 40; -fx-font-size: 14px;"/>
+         <TextArea fx:id="txtDescriptionmodifier" promptText="Description"
+                   style="-fx-pref-width: 500; -fx-pref-height: 100; -fx-font-size: 14px;"/>
+         <TextField fx:id="txtTelmodifier" promptText="Téléphone"
+                    style="-fx-pref-width: 500; -fx-pref-height: 40; -fx-font-size: 14px;"/>
+         <TextField fx:id="txtEmailmodifier" promptText="Email Contact"
+                    style="-fx-pref-width: 500; -fx-pref-height: 40; -fx-font-size: 14px;"/>
+
+         <HBox spacing="20" alignment="CENTER">
+            <Button fx:id="bntmodifier1" text="Modifier hôtel" onAction="#modifierhotel1"
+                    style="-fx-background-color: #2E8B57; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 12 25; -fx-background-radius: 5;"/>
+            <Button fx:id="btnAnnuler" text="Annuler" onAction="#fermerFenetre" styleClass="button-danger"
+                    style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 12 25; -fx-background-radius: 5;"/>
+         </HBox>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.ReservationPackVoyageController" style="-fx-background-color: white; -fx-padding: 20px;">
+    <VBox spacing="15" alignment="CENTER" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+        <!-- Nom du Pack -->
+        <Label text="Nom du Pack:" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+        <Label fx:id="nomPackLabel" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+        <!-- Nombre de Places à Réserver -->
+        <Label text="Nombre de Places à Réserver:" style="-fx-font-size: 14px;"/>
+        <TextField fx:id="placesDemandeesField" promptText="Entrez le nombre de places" style="-fx-font-size: 14px; -fx-padding: 5px;"/>
+
+        <!-- Buttons -->
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Réserver" onAction="#reserverPackVoyage" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-padding: 10px 20px; -fx-font-size: 14px; -fx-background-radius: 5px;"/>
+            <Button text="Annuler" onAction="#annulerReservation" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-padding: 10px 20px; -fx-font-size: 14px; -fx-background-radius: 5px;"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

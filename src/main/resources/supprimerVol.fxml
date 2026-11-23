@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.supprimerVolController">
+    <children>
+        <VBox alignment="CENTER" spacing="10" AnchorPane.topAnchor="50" AnchorPane.bottomAnchor="50" AnchorPane.leftAnchor="100" AnchorPane.rightAnchor="100">
+            <Label text="supprimer vol Vol" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+            <TextField fx:id="numeroVolField" promptText="Numéro de vol"/>
+            <Button fx:id="btnsupprimerVol" text="Supprimer Vol" onAction="#supprimervol" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-padding: 10px;" />
+            <Button fx:id="gotoafficher" text="retour" onAction="#gotoafficher" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-padding: 10px;" />
+
+        </VBox>
+    </children>
+</AnchorPane>

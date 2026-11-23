@@ -1,0 +1,7 @@
+target/
+
+config.properties
+credentials.json
+tokens/
+*.class
+.idea/
